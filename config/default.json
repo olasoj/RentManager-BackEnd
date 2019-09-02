@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb://localhost/rent_manager",
+  "port": "3900"
+}

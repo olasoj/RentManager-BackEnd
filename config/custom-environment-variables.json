@@ -1,0 +1,4 @@
+{
+  "jwtPrivateKey": "rentManager_jwtPrivateKey",
+  "mongoURI": "rentManager_db"
+}

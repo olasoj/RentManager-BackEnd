@@ -9,11 +9,14 @@ const { Admin, validateAdmin } = require('../models/admin');
 // import bcrypt //hash password
 const bcrypt = require('bcrypt');
 
+const isAdmin = require('../middleware/admin');
+const auth = require('../middleware/auth');
+
 router.get('/me', (req, res) => {
   res.send('pppp');
 });
 
-router.post('/', async (req, res) => {
+router.post('/', [auth, isAdmin], async (req, res) => {
   //validate input
   const { error } = validateAdmin(req.body);
   if (error) return res.status(400).send(error.details[0].message);
